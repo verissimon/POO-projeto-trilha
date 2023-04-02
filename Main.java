@@ -14,5 +14,14 @@ public class Main {
         else System.out.print(", está morto");
         
         System.out.print(", e completou " + idadeDoPet + " semanas de idade.\n");
+
+        Cachorro dog1 = new Cachorro();
+        Pinguim pingu = new Pinguim();
+        Gato tom = new Gato();
+        //print especies
+        pingu.print();
+        dog1.print();
+        tom.print();
+
     }
 }
