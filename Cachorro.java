@@ -12,20 +12,13 @@ public class Cachorro extends Pet implements Terrestre{
         
     }
 
-    @Override
-    public void brincar() {
-        // TODO Auto-generated method stub
-        this.caminhar();
-        throw new UnsupportedOperationException("Unimplemented method 'brincar'");
-    }
-
-    @Override
+    @Override //equivale a brincar
     public void caminhar() {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'caminhar'");
     }
 
-    @Override
+    @Override //equivale a comer
     public void comerRacao() {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'comerRacao'");

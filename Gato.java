@@ -14,12 +14,6 @@ public class Gato extends Pet implements Terrestre{
     }
 
     @Override
-    public void brincar() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'brincar'");
-    }
-
-    @Override
     public void caminhar() {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'caminhar'");

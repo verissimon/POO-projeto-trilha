@@ -2,8 +2,7 @@
 
 ## Simulador de pet virtual
 
-Um programa que simula a tarefa de cuidar de um pet virtual. O usuário pode criar um pet a partir de algumas das espécies pré definidas: um cachorro, um gato, e um pinguim e lhe dar um nome. O usuário Deve alimentar, dar água, cuidar de sua higiene e brincar com o pet para mantê-lo saudável. A progressão se dá com o avanço da idade do mascote e seus parâmetros de saúde no decorrer do tempo.
-Por fim, o desempenho do usuário é calculado de acordo com sua progressão.  
+Um programa que simula a tarefa de cuidar de um pet virtual. O usuário pode criar um pet a partir de algumas das espécies pré definidas: um cachorro, um gato, e um pinguim e lhe dar um nome. O usuário Deve alimentar, dar água, cuidar de sua higiene e brincar com o pet para mantê-lo saudável. A progressão se dá com o avanço da idade do mascote e seus parâmetros de saúde no decorrer do tempo. Por fim, o desempenho do usuário é calculado de acordo com sua progressão.  
 Vários conceitos de OO podem ser implementados nesse projeto. Cada espécie pode ser uma classe que herda da classe Pet, e cada espécie tem seus atributos variados. O usuário instancia seu mascote em tempo de execução. Mais opções de customização e uma GUI podem ser implementadas posteriormente.  
 
 ### Especificações
@@ -27,5 +26,5 @@ Se limpeza <= 45, o pet está sujo e e pode adoecer com probabilidade de 30%.
 Se felicidade >= 70, o pet está feliz e pode, com 50% de chance, regenerar 5 pontos de vida.  
 Se felicidade <= 40, o pet está infeliz e pode, com 50% de chance, perder 5 pontos de vida;  
 O pet envelhece e sua idade aumenta 1 ponto.  
-Se velho o suficiente, o pet tem 55% de chance de morrer.
+Se velho o suficiente, o pet tem 55% de chance de morrer.  
 Se doente, o pet tem 10% de chance de morrer ao fim do turno.  

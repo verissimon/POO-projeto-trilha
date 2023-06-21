@@ -1,4 +1,4 @@
-public abstract class Pet{
+public abstract class Pet {
     private String nome;
     private int vida;
     private int idade;
@@ -61,7 +61,8 @@ public abstract class Pet{
         return true;
     }
     //TODO metodos para brincar alimentar limpar
-    public abstract void brincar();
+    
+    //public abstract void brincar();
     //public abstract void alimentar();
     //public abstract void limpar();
     //public abstract void medicar();

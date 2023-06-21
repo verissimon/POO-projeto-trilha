@@ -1,6 +1,7 @@
 import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.List;
+import static Const.Constantes.*;
 
 public class Main {
     static Scanner scanner = new Scanner(System.in);
