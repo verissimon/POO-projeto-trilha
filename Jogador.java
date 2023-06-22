@@ -1,3 +1,4 @@
+import pets.Pet;
 public class Jogador {
     private int pontuacao;
     private Pet pet;

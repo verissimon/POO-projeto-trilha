@@ -1,5 +1,6 @@
+package pets;
 public abstract class Pet {
-    private String nome;
+    private final String nome;
     private int vida;
     private int idade;
     private boolean doente;
@@ -35,6 +36,8 @@ public abstract class Pet {
     public int getFome() {
         return fome;
     }
+    public void setVida(int vida){ this.vida = vida;}
+    public void setIdade(int idade){ this.idade = idade;}
     public void setFome(int fome) {
         this.fome = fome;
     }
@@ -55,10 +58,7 @@ public abstract class Pet {
         if(this.vida <= 0){
             return false;
         }
-        if(this.idade >= 20){
-            return false;
-        }
-        return true;
+        return this.idade < 20;
     }
     //TODO metodos para brincar alimentar limpar
     

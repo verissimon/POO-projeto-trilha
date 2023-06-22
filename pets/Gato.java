@@ -1,3 +1,4 @@
+package pets;
 public class Gato extends Pet implements Terrestre{
     public Gato(String nome) {
         super(nome);

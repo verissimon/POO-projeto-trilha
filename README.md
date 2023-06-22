@@ -16,7 +16,7 @@ Limpar: aumenta a limpeza.
 Medicar: Pode curar a doença do pet, caso doente == true.  
 
 Ao início de cada turno os atributos são atualizados da seguinte forma:  
-Sua fome aumenta em 15 pontos;  
+Sua fome aumenta em 20 pontos;  
 Sua limpeza diminui em 15 pontos;  
 Sua felicidade diminui em 10 pontos;  
 

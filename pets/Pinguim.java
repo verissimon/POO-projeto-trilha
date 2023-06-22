@@ -1,3 +1,4 @@
+package pets;
 public class Pinguim extends Pet implements Aquatico{
 
     public Pinguim(String nome) {

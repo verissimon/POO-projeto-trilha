@@ -1,4 +1,5 @@
-public class Cachorro extends Pet implements Terrestre{   
+package pets;
+public class Cachorro extends Pet implements Terrestre{
     public Cachorro(String nome) {
         super(nome);
     }
