@@ -1,7 +1,5 @@
 package pets;
 public interface Terrestre {
-    public void caminhar();     //equivale a brincar
-    public void alimentarPetisco();   //equivale a comer
-    //TODO public abstract void darBanho();
-
+    void brincarBonus();     //equivale a brincar
+    void alimentarBonus();   //equivale a comer
 }
