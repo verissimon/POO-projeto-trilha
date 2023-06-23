@@ -4,6 +4,7 @@ import pets.Pet;
 import static pets.Const.Constantes.*;
 import static pets.Turno.Chance.*;
 public class Testes {
+
     public static boolean testeFome(Pet pet) {
         //esta com fome
         return pet.getFome() >= FOME_FAMINTO;
@@ -39,5 +40,11 @@ public class Testes {
     public static boolean testeVelhiceMorte() { //associado a morte natural
         //O pet pode morrer de velhice caso o atributo idade seja alto o suficiente: maior que 15 turnos.
         return testarChance(PROB_MORTEVELHICE);
+    }
+    public static boolean testeBrincaBonus(){
+        return testarChance(BRINCAR_BONUSPROB);
+    }
+    public static boolean testeFomeBonus(){
+        return testarChance(FOME_BONUSPROB);
     }
 }

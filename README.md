@@ -18,7 +18,7 @@ Medicar: Pode curar a doença do pet, caso doente == true.
 Ao início de cada turno os atributos são atualizados da seguinte forma:  
 Sua fome aumenta em 20 pontos;  
 Sua limpeza diminui em 15 pontos;  
-Sua felicidade diminui em 10 pontos;  
+Sua felicidade diminui em 15 pontos;  
 
 Ao fim de cada turno o estado de saúde é atualizado da seguinte forma:  
 Se fome >= 70, o pet está com fome e perde 10 pontos de vida.  

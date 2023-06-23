@@ -4,8 +4,13 @@ public final class Constantes {
     private Constantes(){} //previne criação de instancias
 
     public static final int ATT_FOME = 20, ATT_LIMPEZA = -15, ATT_FELICIDADE = -15;
-
+    public static final int FELIC_INCREMENTO = 30;
+    public static final double BRINCAR_BONUSPROB = .35;
+    public static final int FOME_INCREMENTO = 40;
+    public static final double FOME_BONUSPROB = .3;
+    public static final int FOME_MIN = 0;
     public static final int VIDA_MAX = 100;
+    public static final int FELIC_MAX = 100;
     public static final int FELIC_FELIZ = 70;      //Se felicidade >= 70, o pet está feliz
     public static final int FELIC_INFELIZ = 40;    //Se felicidade <= 40, o pet está infeliz
     public static final int FOME_FAMINTO = 70;     //Se fome >= 70, o pet está com fome 

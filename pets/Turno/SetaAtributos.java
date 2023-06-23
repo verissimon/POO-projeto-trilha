@@ -19,25 +19,26 @@ public class SetaAtributos {
         atualizaIdade(pet);
     }
 
-    public static void atualizaFome(Pet pet) {
+    private static void atualizaFome(Pet pet) {
         if (testeFome(pet)) {
             System.out.println(pet.getNome() + " esta faminto");
-            pet.setVida(pet.getVida() + DANO);
+            pet.tomaDano(DANO);
         } else {
             System.out.println("o pet esta satisfeito com a barriga relativamente cheia");
         }
-        if (pet.getVida() <= 0)
+        if (!pet.estaVivo() && pet.getVida() >= DANO) {
             System.out.println(pet.getNome() + " morreu de fome.");
+        }
     }
 
-    public static void atualizaFelicidade(Pet pet) {
+    private static void atualizaFelicidade(Pet pet) {
         if (testeFelicidade(pet)) { //felicidade acima do mínimo de felicidade (40)
-            System.out.println("pet está contente");
+            System.out.println(pet.getNome() + " está contente");
             //50% de chance de regen DANO/2
             if (testeRegen(pet)) {
                 //true o pet regenera DANO/2
                 System.out.println("tao feliz que se regenerou!");
-                pet.setVida(pet.getVida() - DANO / 2);
+                pet.tomaDano(-DANO/2);
             }
         } else {
             //felicidade abaixo do mínimo de felicidade (40)
@@ -45,18 +46,19 @@ public class SetaAtributos {
             if (testeDegen()) {
                 //true o pet recebe DANO/2
                 System.out.println("tao triste que sua saude se deteriorou.");
-                pet.setVida(pet.getVida() + DANO / 2);
+                pet.tomaDano(DANO/2);
             }
-            if (pet.getVida() <= 0)
+            if (!pet.estaVivo() && pet.getVida() >= DANO/2) {
                 System.out.println(pet.getNome() + " morreu de tristeza.");
+            }
         }
     }
 
-    public static void atualizaLimpeza(Pet pet) {
+    private static void atualizaLimpeza(Pet pet) {
         if (testeLimpeza(pet)) {
             //Se limpeza <= 45, o pet está sujo e e pode adoecer com probabilidade de 30%.
             System.out.println(pet.getNome() + " esta sujo");
-            if (!pet.isDoente() && testeAdoeceu()) {
+            if (!pet.isDoente() && testeAdoeceu() && pet.estaVivo()) {
                 //o pet deve estar saudavel (doente = false) para adoecer
                 System.out.println("adoeceu por viver na imundície.");
                 pet.setDoente(true);
@@ -64,7 +66,7 @@ public class SetaAtributos {
         }
     }
 
-    public static void atualizaDoenca(Pet pet) {
+    private static void atualizaDoenca(Pet pet) {
         //Se doente, o pet tem 10% de chance de morrer ao fim do turno.
         if (pet.isDoente() && pet.estaVivo()) {
             if (testeDoenteMorte()) {
@@ -74,7 +76,7 @@ public class SetaAtributos {
         }
     }
 
-    public static void atualizaIdade(Pet pet) {
+    private static void atualizaIdade(Pet pet) {
         pet.setIdade(pet.getIdade() + 1);
         //O pet envelhece e sua idade aumenta 1 ponto.
         if ((pet.getIdade() > IDADE_IDOSO) && testeVelhiceMorte() && pet.estaVivo()) {

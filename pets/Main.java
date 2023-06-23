@@ -4,7 +4,7 @@ import java.util.Objects;
 import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.List;
-import pets.Turno.*;
+import pets.Turno.SetaAtributos;
 
 public class Main {
     static Scanner scanner = new Scanner(System.in);
@@ -51,7 +51,34 @@ public class Main {
                 /*NOVO TURNO*/
                 SetaAtributos.newTurnStats(petAtual);
                 //TODO acoes do jogador
-
+                System.out.println("escolha o que fazer:\n"+
+                        "0. nada\n" +
+                        "1. brincar\n" +
+                        "2. limpar\n" +
+                        "3. medicar\n" +
+                        "4. alimentar");
+                switch (scanner.nextInt()){
+                    case 0 -> {} //equivale a break
+                    case 1 -> {
+                        petAtual.brincar();
+                    }
+                    case 2 -> {
+                        System.out.println("TODO");
+                        petAtual.limpar();
+                    }
+                    case 3 -> {
+                        System.out.println("TODO");
+                        petAtual.medicar();
+                    }
+                    case 4 -> {
+                        petAtual.alimentar();
+                        System.out.println(petAtual.getFome());
+                    }
+                    default -> {
+                        System.out.println("voce nao fez nada");
+                    }
+                }
+                scanner.nextLine();
                 //FIM ACOES DO JOGADOR
                 /*FIM DO TURNO*/
                 SetaAtributos.endTurn(petAtual);

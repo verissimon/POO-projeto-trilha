@@ -55,15 +55,20 @@ public abstract class Pet {
     }
 
     public boolean estaVivo(){
-        if(this.vida <= 0){
-            return false;
-        }
-        return this.idade < 20;
+        return this.vida > 0;
     }
-    //TODO metodos para brincar alimentar limpar
-    
-    //public abstract void brincar();
-    //public abstract void alimentar();
-    //public abstract void limpar();
-    //public abstract void medicar();
+    public void tomaDano(int dano){
+        if(this.estaVivo()) {
+            this.vida += dano;
+        }
+    }
+
+    public abstract void brincar();
+    public abstract void alimentar();
+    public void limpar(){
+        //TODO limpar
+    }
+    public void medicar(){
+        //todo limpar
+    }
 }
