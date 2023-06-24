@@ -67,7 +67,7 @@ public class Main {
                 //FIM ACOES DO JOGADOR
                 /*FIM DO TURNO*/
                 SetaAtributos.endTurn(petAtual);
-                petAtual.printStats();
+                //petAtual.printStats();
             }
             System.out.println("é o fim de "+ petAtual.getNome() + ". RIP ;-;\n");
             System.out.println("GAME OVER\n\n");

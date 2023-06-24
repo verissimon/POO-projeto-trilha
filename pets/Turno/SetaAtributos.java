@@ -13,10 +13,10 @@ public class SetaAtributos {
     }
 
     public static void endTurn(Pet pet) {
+        atualizaDoenca(pet);
         atualizaLimpeza(pet);
         atualizaFelicidade(pet);
         atualizaFome(pet);
-        atualizaDoenca(pet);
         atualizaIdade(pet);
         atualizaMAXMIN(pet);
     }
@@ -31,7 +31,6 @@ public class SetaAtributos {
     }
 
     private static void atualizaFome(Pet pet) {
-
         if (testeFome(pet)) {
             System.out.println(pet.getNome() + " esta faminto");
             pet.tomaDano(DANO);
@@ -50,7 +49,7 @@ public class SetaAtributos {
             if (testeRegen(pet)) {
                 //true o pet regenera DANO/2
                 System.out.println("tao feliz que se regenerou!");
-                pet.tomaDano(-DANO/2);
+                pet.tomaDano(-DANO);
             }
         } else {
             //felicidade abaixo do mínimo de felicidade (40)
@@ -58,7 +57,7 @@ public class SetaAtributos {
             if (testeDegen()) {
                 //true o pet recebe DANO/2
                 System.out.println("tao triste que sua saude se deteriorou.");
-                pet.tomaDano(DANO/2);
+                pet.tomaDano(2*DANO);
             }
             if (!pet.estaVivo() && pet.getVida() >= DANO/2) {
                 System.out.println(pet.getNome() + " morreu de tristeza.");
