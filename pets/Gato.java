@@ -4,7 +4,7 @@ import static pets.Const.Constantes.*;
 import static pets.Turno.Testes.testeBrincaBonus;
 import static pets.Turno.Testes.testeFomeBonus;
 
-public class Gato extends Pet implements Terrestre{
+public class Gato extends Pet{
     public Gato(String nome) {
         super(nome);
     }
@@ -16,13 +16,12 @@ public class Gato extends Pet implements Terrestre{
         if(testeBrincaBonus()){
             this.brincarBonus();
         }
-        if(this.getFelicidade() >= 100) this.setFelicidade(FELIC_MAX);
     }
 
     @Override
     public void alimentar() {
         System.out.println("voce alimentou seu gato "+ this.getNome());
-        this.setFome(this.getFome() - FOME_INCREMENTO);
+        this.setFome(this.getFome() + FOME_INCREMENTO);
         if(testeFomeBonus()){
             this.alimentarBonus();
         }
@@ -49,6 +48,6 @@ public class Gato extends Pet implements Terrestre{
     @Override
     public void alimentarBonus() {
         System.out.println("voce alimentou "+ this.getNome() + " com sua comida de gato favorita");
-        this.setFome(this.getFome() - FOME_INCREMENTO/4);
+        this.setFome(this.getFome() + FOME_INCREMENTO/4);
     }
 }

@@ -1,5 +1,9 @@
 package pets;
-public abstract class Pet {
+
+import static pets.Const.Constantes.*;
+import static pets.Turno.Testes.testeCura;
+
+public abstract class Pet implements Acoes{
     private final String nome;
     private int vida;
     private int idade;
@@ -18,9 +22,7 @@ public abstract class Pet {
         this.felicidade = 100;
         this.limpeza = 100;
     }
-    public boolean isDoente() {
-        return doente;
-    }
+    public boolean isDoente() { return doente; }
     public void setDoente(boolean doente) {
         this.doente = doente;
     }
@@ -62,13 +64,22 @@ public abstract class Pet {
             this.vida += dano;
         }
     }
-
-    public abstract void brincar();
-    public abstract void alimentar();
+    public void printStats(){
+        System.out.println("felicidade de "+this.getNome()+ ": " + this.getFelicidade());
+        System.out.println("fome de "+this.getNome()+ ": " + this.getFome());
+        System.out.println("limpeza de "+this.getNome()+ ": " + this.getLimpeza());
+        System.out.println("idade de "+this.getNome()+ ": " + this.getIdade());
+    }
     public void limpar(){
-        //TODO limpar
+        System.out.println("voce limpou o ambiente que "+ this.getNome() + " vive");
+        this.setLimpeza(this.getLimpeza() + LIMP_INCREMENTO);
     }
     public void medicar(){
-        //todo limpar
+        if(!this.isDoente()){
+            System.out.println("o pet já está saudável");
+        } else if(testeCura()){
+                System.out.println("o pet foi curado de sua doenca");
+                this.setDoente(false);
+            } else System.out.println("o pet continua doente");
     }
 }

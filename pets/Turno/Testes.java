@@ -47,4 +47,5 @@ public class Testes {
     public static boolean testeFomeBonus(){
         return testarChance(FOME_BONUSPROB);
     }
+    public static boolean testeCura(){ return testarChance(PROB_MEDIC_CURA);}
 }

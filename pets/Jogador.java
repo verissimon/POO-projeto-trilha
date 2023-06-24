@@ -1,41 +1,33 @@
 package pets;
 
 import java.util.List;
-import java.util.Objects;
+import java.util.ArrayList;
 
 public class Jogador {
-    private int pontuacao;
     private List<Pet> pets;
     
     public Jogador(List<Pet> listPets) {
-        this.pontuacao = 0;
         this.pets = listPets;
     }
-    public int getPontuacao() {
-        return pontuacao;
-    }
-    public void setPontuacao(int pontuacao) {
-        this.pontuacao = pontuacao;
-    }
+
     public List<Pet> getPets() {
         return pets;
     }
-    public void setPet(List<Pet> pets) {
+    public void setPets(List<Pet> pets) {
         this.pets = pets;
     }
 
     public int calcPontuacao(Pet pet){ //retorna pontuacao para um pet
-        //TODO calcular pontuacao
-    return 0;
+        return pet.getIdade()*100
+                + pet.getLimpeza()*10
+                + pet.getFelicidade()*10
+                - pet.getFome()*10;
     }
-    private Pet percorrePet(List<Pet> pets){
-        Pet pet = null;
-        for (Pet p : pets) {
-            //if (Objects.equals(p.getNome(), nomePet)) {
-          //      pet = p;
-                break;
-           // }
-        }
-        return pet;
+    //classe sobrecarregada
+    public int calcPontuacao(List<Pet> pets, int index){ //retorna pontuacao para um pet dada ArrayList e indice
+        return pets.get(index).getIdade()*100
+                + pets.get(index).getLimpeza()*10
+                + pets.get(index).getFelicidade()*10
+                - pets.get(index).getFome()*10;
     }
 }

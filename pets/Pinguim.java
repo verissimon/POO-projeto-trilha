@@ -4,7 +4,7 @@ import static pets.Const.Constantes.*;
 import static pets.Turno.Testes.testeBrincaBonus;
 import static pets.Turno.Testes.testeFomeBonus;
 
-public class Pinguim extends Pet implements Aquatico{
+public class Pinguim extends Pet {
 
     public Pinguim(String nome) {
         super(nome);
@@ -15,9 +15,8 @@ public class Pinguim extends Pet implements Aquatico{
         System.out.println("voce passou um tempo de qualidade no iglu com " + this.getNome());
         this.setFelicidade(this.getFelicidade() + FELIC_INCREMENTO);
         if(testeBrincaBonus()){
-            this.nadar();
+            this.brincarBonus();
         }
-        if(this.getFelicidade() >= 100) this.setFelicidade(FELIC_MAX);
     }
 
     @Override
@@ -25,9 +24,8 @@ public class Pinguim extends Pet implements Aquatico{
         System.out.println("voce alimentou um peixe para seu pinguim " + this.getNome());
         this.setFome(this.getFome() + FOME_INCREMENTO);
         if(testeFomeBonus()){
-            this.comerFrutoDoMar();
+            this.alimentarBonus();
         }
-        if(this.getFome() >= 100) this.setFelicidade(FELIC_MAX);
     }
 
 
@@ -40,15 +38,15 @@ public class Pinguim extends Pet implements Aquatico{
     }
     
     @Override //equivale a brincar
-    public void nadar() {
+    public void brincarBonus() {
         this.setFelicidade(this.getFelicidade() + FELIC_INCREMENTO/3);
         System.out.println("o pinguin " + this.getNome() + " foi nadar e parece estar muito feliz.");
     }
 
-    //equivale a comer
-    public void comerFrutoDoMar() {
+    @Override //equivale a comer
+    public void alimentarBonus() {
         System.out.println("voce alimentou "+ this.getNome() + " com seu fruto do mar favorito");
-        this.setFome(this.getFome() - FOME_INCREMENTO/4);
+        this.setFome(this.getFome() + FOME_INCREMENTO/4);
     }
 
 }

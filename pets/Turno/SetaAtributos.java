@@ -9,6 +9,7 @@ public class SetaAtributos {
         pet.setFome(pet.getFome() + ATT_FOME);
         pet.setLimpeza(pet.getLimpeza() + ATT_LIMPEZA);
         pet.setFelicidade(pet.getFelicidade() + ATT_FELICIDADE);
+        atualizaMAXMIN(pet);
     }
 
     public static void endTurn(Pet pet) {
@@ -17,9 +18,20 @@ public class SetaAtributos {
         atualizaFome(pet);
         atualizaDoenca(pet);
         atualizaIdade(pet);
+        atualizaMAXMIN(pet);
+    }
+    private static void atualizaMAXMIN(Pet pet){
+        if(pet.getFome() > FOME_MAX) pet.setFome(FOME_MAX);
+        if(pet.getLimpeza() > LIMP_MAX) pet.setLimpeza(LIMP_MAX);
+        if(pet.getFelicidade() > FELIC_MAX) pet.setFelicidade(FELIC_MAX);
+        if(pet.getVida() > VIDA_MAX) pet.setVida(VIDA_MAX);
+        if(pet.getFome() < FOME_MIN) pet.setFome(FOME_MIN);
+        if(pet.getLimpeza() < LIMP_MIN) pet.setLimpeza(LIMP_MIN);
+        if(pet.getFelicidade() < FELIC_MIN) pet.setFelicidade(FELIC_MIN);
     }
 
     private static void atualizaFome(Pet pet) {
+
         if (testeFome(pet)) {
             System.out.println(pet.getNome() + " esta faminto");
             pet.tomaDano(DANO);

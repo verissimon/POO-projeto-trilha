@@ -2,7 +2,8 @@ package pets;
 
 import static pets.Const.Constantes.*;
 import static pets.Turno.Testes.*;
-public class Cachorro extends Pet implements Terrestre{
+
+public class Cachorro extends Pet{
     public Cachorro(String nome) {
         super(nome);
     }
@@ -14,13 +15,12 @@ public class Cachorro extends Pet implements Terrestre{
         if(testeBrincaBonus()){
             this.brincarBonus();
         }
-        if(this.getFelicidade() >= 100) this.setFelicidade(FELIC_MAX);
     }
 
     @Override
     public void alimentar() {
         System.out.println("voce alimentou seu dog "+ this.getNome());
-        this.setFome(this.getFome() - FOME_INCREMENTO);
+        this.setFome(this.getFome() + FOME_INCREMENTO);
         if(testeFomeBonus()){
             this.alimentarBonus();
         }
@@ -36,16 +36,16 @@ public class Cachorro extends Pet implements Terrestre{
         
     }
 
-    @Override //equivale a brincar
+    @Override
     public void brincarBonus() {
         this.setFelicidade(this.getFelicidade() + FELIC_INCREMENTO/3);
         System.out.println(this.getNome() + " te arrastou pra passear e a caminhada o deixou extremamente feliz :)");
     }
 
-    @Override //equivale a comer
+    @Override
     public void alimentarBonus() {
         System.out.println("voce alimentou "+ this.getNome() + " com seu petisco favorito");
-        this.setFome(this.getFome() - FOME_INCREMENTO/4);
+        this.setFome(this.getFome() + FOME_INCREMENTO/4);
     }
 
 
