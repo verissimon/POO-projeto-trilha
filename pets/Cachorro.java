@@ -12,7 +12,7 @@ public class Cachorro extends Pet{
     public void brincar() {
         System.out.println("voce brincou com seu dog " + this.getNome());
         this.setFelicidade(this.getFelicidade() + FELIC_INCREMENTO);
-        if(testeBrincaBonus()){
+        if(testarChance(BRINCAR_BONUSPROB)){
             this.brincarBonus();
         }
     }
@@ -21,7 +21,7 @@ public class Cachorro extends Pet{
     public void alimentar() {
         System.out.println("voce alimentou seu dog "+ this.getNome());
         this.setFome(this.getFome() + FOME_INCREMENTO);
-        if(testeFomeBonus()){
+        if(testarChance(FOME_BONUSPROB)){
             this.alimentarBonus();
         }
         if(this.getFome() <= FOME_MIN) this.setFome(FOME_MIN);

@@ -67,12 +67,12 @@ public class Main {
                 //FIM ACOES DO JOGADOR
                 /*FIM DO TURNO*/
                 SetaAtributos.endTurn(petAtual);
-                //petAtual.printStats();
+                petAtual.printStats();
             }
             System.out.println("é o fim de "+ petAtual.getNome() + ". RIP ;-;\n");
             System.out.println("GAME OVER\n\n");
             System.out.println("sua pontuacao: " + player.calcPontuacao(petAtual));
-            //petAtual.printStats();
+            petAtual.printStats();
             System.out.println("jogar novamente? 1: sim\noutro: nao");
 
             if(!scanner.nextLine().contentEquals("1")) jogarNovamente = false;
@@ -81,10 +81,10 @@ public class Main {
         if(scanner.nextLine().contentEquals("1")){
             Pet petAtual = buscaNomePet(pets);
             System.out.println("sua pontuacao: " + player.calcPontuacao(petAtual));
-            /*
-            usando o metodo sobrecarregado calcPontuacao:
-            System.out.println("sua pontuacao: " + player.calcPontuacao(pets, pets.indexOf(petAtual)));
-            */
+                /*
+                usando o metodo sobrecarregado calcPontuacao:
+                System.out.println("sua pontuacao: " + player.calcPontuacao(pets, pets.indexOf(petAtual)));
+                */
         }
         scanner.close();
     }

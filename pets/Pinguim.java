@@ -1,8 +1,7 @@
 package pets;
 
 import static pets.Const.Constantes.*;
-import static pets.Turno.Testes.testeBrincaBonus;
-import static pets.Turno.Testes.testeFomeBonus;
+import static pets.Turno.Testes.*;
 
 public class Pinguim extends Pet {
 
@@ -14,7 +13,7 @@ public class Pinguim extends Pet {
     public void brincar() {
         System.out.println("voce passou um tempo de qualidade no iglu com " + this.getNome());
         this.setFelicidade(this.getFelicidade() + FELIC_INCREMENTO);
-        if(testeBrincaBonus()){
+        if(testarChance(BRINCAR_BONUSPROB)){
             this.brincarBonus();
         }
     }
@@ -23,7 +22,7 @@ public class Pinguim extends Pet {
     public void alimentar() {
         System.out.println("voce alimentou um peixe para seu pinguim " + this.getNome());
         this.setFome(this.getFome() + FOME_INCREMENTO);
-        if(testeFomeBonus()){
+        if(testarChance(FOME_BONUSPROB)){
             this.alimentarBonus();
         }
     }

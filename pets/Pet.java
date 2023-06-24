@@ -1,7 +1,7 @@
 package pets;
 
 import static pets.Const.Constantes.*;
-import static pets.Turno.Testes.testeCura;
+import static pets.Turno.Testes.testarChance;
 
 public abstract class Pet implements Acoes{
     private final String nome;
@@ -77,7 +77,7 @@ public abstract class Pet implements Acoes{
     public void medicar(){
         if(!this.isDoente()){
             System.out.println("o pet já está saudável");
-        } else if(testeCura()){
+        } else if(testarChance(PROB_MEDIC_CURA)){
                 System.out.println("o pet foi curado de sua doenca");
                 this.setDoente(false);
             } else System.out.println("o pet continua doente");
