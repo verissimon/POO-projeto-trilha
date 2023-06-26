@@ -46,10 +46,11 @@ public class Main {
             }
             //seleciona pet que foi adicionado na jogada mais recente
             Pet petAtual = pets.get(pets.size()-1);
-            while(petAtual.estaVivo()){ //cada iteracao é um turno
+            while(petAtual.estaVivo()){ //cada iteracao é um turno, e se encerra quando o pet morre
                 System.out.println();
                 /*NOVO TURNO*/
                 SetaAtributos.newTurnStats(petAtual);
+                //INICIO ACAO DO JOGADOR 
                 System.out.println("""
                         escolha o que fazer:
                         1. brincar
@@ -67,27 +68,33 @@ public class Main {
                 //FIM ACOES DO JOGADOR
                 /*FIM DO TURNO*/
                 SetaAtributos.endTurn(petAtual);
-                petAtual.printStats();
+                //petAtual.printStats(); // mostra parametros ao fim do turno
             }
             System.out.println("é o fim de "+ petAtual.getNome() + ". RIP ;-;\n");
-            System.out.println("GAME OVER\n\n");
+            petAtual.printDead();
+            System.out.println("GAME OVER");
+            // usando método sobrecarregado pets.Jogador.calcPontuacao(Pet pet)
             System.out.println("sua pontuacao: " + player.calcPontuacao(petAtual));
-            petAtual.printStats();
+            // petAtual.printStats(); // mostra parametros apos fim do jogo
             System.out.println("jogar novamente? 1: sim\noutro: nao");
 
             if(!scanner.nextLine().contentEquals("1")) jogarNovamente = false;
         }
+
         System.out.println("deseja rever a pontuacao de algum pet?\n1. sim\noutro: nao");
         if(scanner.nextLine().contentEquals("1")){
             Pet petAtual = buscaNomePet(pets);
-            System.out.println("sua pontuacao: " + player.calcPontuacao(petAtual));
-                /*
-                usando o metodo sobrecarregado calcPontuacao:
-                System.out.println("sua pontuacao: " + player.calcPontuacao(pets, pets.indexOf(petAtual)));
-                */
+            if(Objects.isNull(petAtual))
+                System.out.println("pet nao encontrado");
+            else {
+            // usando metodo sobrecarregado pets.Jogador.calcPontuacao(int index)
+            System.out.println("sua pontuacao: " + player.calcPontuacao(pets.indexOf(petAtual)));
+            //System.out.println("sua pontuacao: " + player.calcPontuacao(petAtual));
+            }
         }
         scanner.close();
     }
+    
     static Pet buscaNomePet(List<Pet> pets){
         System.out.println("Digite o nome exato do pet:");
         String nomePet = scanner.nextLine();

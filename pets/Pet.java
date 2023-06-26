@@ -8,6 +8,7 @@ public abstract class Pet implements Acoes{
     private int vida;
     private int idade;
     private boolean doente;
+    private boolean morreu;
     private int fome;
     private int felicidade;
     private int limpeza;
@@ -18,6 +19,7 @@ public abstract class Pet implements Acoes{
         this.vida = 100;
         this.idade = 0;
         this.doente = false;
+        this.morreu = false;
         this.fome = 0;
         this.felicidade = 100;
         this.limpeza = 100;
@@ -25,6 +27,10 @@ public abstract class Pet implements Acoes{
     public boolean isDoente() { return doente; }
     public void setDoente(boolean doente) {
         this.doente = doente;
+    }
+    public boolean jaMorreu() { return morreu; }
+    public void setMorreu(boolean morreu) {
+        this.morreu = morreu;
     }
     public String getNome() {
         return nome;
@@ -56,13 +62,11 @@ public abstract class Pet implements Acoes{
         this.limpeza = limpeza;
     }
 
-    public boolean estaVivo(){
+    public boolean estaVivo(){  
         return this.vida > 0;
     }
     public void tomaDano(int dano){
-        if(this.estaVivo()) {
-            this.vida += dano;
-        }
+        this.vida += dano;
     }
     public void printStats(){
         System.out.println("felicidade de "+this.getNome()+ ": " + this.getFelicidade());
@@ -81,5 +85,17 @@ public abstract class Pet implements Acoes{
                 System.out.println("o pet foi curado de sua doenca");
                 this.setDoente(false);
             } else System.out.println("o pet continua doente");
+    }
+    public void brincar(){
+        this.setFelicidade(this.getFelicidade() + FELIC_INCREMENTO);
+        if(testarChance(BRINCAR_BONUSPROB)){
+            this.brincarBonus();
+        }
+    }
+    public void alimentar(){
+        this.setFome(this.getFome() + FOME_INCREMENTO);
+        if(testarChance(FOME_BONUSPROB)){
+            this.alimentarBonus();
+        }
     }
 }

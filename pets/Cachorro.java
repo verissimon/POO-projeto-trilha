@@ -1,7 +1,6 @@
 package pets;
 
 import static pets.Const.Constantes.*;
-import static pets.Turno.Testes.*;
 
 public class Cachorro extends Pet{
     public Cachorro(String nome) {
@@ -11,25 +10,27 @@ public class Cachorro extends Pet{
     @Override
     public void brincar() {
         System.out.println("voce brincou com seu dog " + this.getNome());
-        this.setFelicidade(this.getFelicidade() + FELIC_INCREMENTO);
-        if(testarChance(BRINCAR_BONUSPROB)){
-            this.brincarBonus();
-        }
+        super.brincar();
     }
 
     @Override
     public void alimentar() {
         System.out.println("voce alimentou seu dog "+ this.getNome());
-        this.setFome(this.getFome() + FOME_INCREMENTO);
-        if(testarChance(FOME_BONUSPROB)){
-            this.alimentarBonus();
-        }
-        if(this.getFome() <= FOME_MIN) this.setFome(FOME_MIN);
+        super.alimentar();
     }
 
     public void print(){
         System.out.println("             __\n"+
-                           "    \\ ______/ V`-,\n"+
+                           "    \\ ______/ Vo-,\n"+
+                           "     }        /~~\n"+
+                           "    /_)^ --,r'\n"+
+                           "   |b      |b");
+        
+    }
+
+    public void printDead(){
+        System.out.println("             __\n"+
+                           "    \\ ______/ Vx-,\n"+
                            "     }        /~~\n"+
                            "    /_)^ --,r'\n"+
                            "   |b      |b");
@@ -47,6 +48,4 @@ public class Cachorro extends Pet{
         System.out.println("voce alimentou "+ this.getNome() + " com seu petisco favorito");
         this.setFome(this.getFome() + FOME_INCREMENTO/4);
     }
-
-
 }

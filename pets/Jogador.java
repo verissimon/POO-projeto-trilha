@@ -1,10 +1,9 @@
 package pets;
 
 import java.util.List;
-import java.util.ArrayList;
 
 public class Jogador {
-    private List<Pet> pets;
+    private List<Pet> pets; // agregando o tipo Pet
     
     public Jogador(List<Pet> listPets) {
         this.pets = listPets;
@@ -24,7 +23,7 @@ public class Jogador {
                 - pet.getFome()*10;
     }
     //classe sobrecarregada
-    public int calcPontuacao(List<Pet> pets, int index){ //retorna pontuacao para um pet dada ArrayList e indice
+    public int calcPontuacao(int index){ //retorna pontuacao para um pet dada posicao na lista
         return pets.get(index).getIdade()*100
                 + pets.get(index).getLimpeza()*10
                 + pets.get(index).getFelicidade()*10

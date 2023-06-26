@@ -3,6 +3,7 @@ public final class Constantes {
 
     private Constantes(){} //previne criação de instancias
 
+    public static final int DANO = -10;             //dano padrão = -20
     public static final int ATT_FOME = 15, ATT_LIMPEZA = -10, ATT_FELICIDADE = -10; //variaveis que atualizam os status no inicio de cada turno
     //incrementos aos status de acordo com a açao do jogador
     public static final int LIMP_INCREMENTO = 30;
@@ -29,7 +30,6 @@ public final class Constantes {
     public static final double PROB_DOENTE = .3;
     public static final double FOME_BONUSPROB = .3;
     public static final double BRINCAR_BONUSPROB = .35;
-    public static final double PROB_DOENTEMORTE = .1;
+    public static final double PROB_DOENTEMORTE = .20;
     public static final int IDADE_IDOSO = 15;      //Se idade >= 15, o pet está velho
-    public static final int DANO = -10;             //dano padrão = -20
 }

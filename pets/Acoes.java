@@ -7,4 +7,7 @@ public interface Acoes {
     void alimentarBonus();
     void limpar();
     void medicar();
+    void print();
+    void printStats();
+    void printDead();
 }
