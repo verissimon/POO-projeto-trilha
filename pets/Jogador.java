@@ -45,7 +45,7 @@ public class Jogador {
     public void revisaPet(Pet pet){
         pet.print();
         System.out.println("o pet "+pet.getNome()+" viveu "+pet.getIdade()+" turnos");
-        System.out.println("como tutor, voce pontuou "+this.calcPontuacao(pet));
+        System.out.println("como tutor, voce pontuou "+this.calcPontuacao(pet)+"pontos");
         System.out.println("no fim, os status eram os seguintes:\n");
         pet.printStats();
     }

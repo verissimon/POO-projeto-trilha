@@ -43,11 +43,10 @@ public class Main {
             }
             //seleciona pet que foi adicionado na jogada mais recente
             Pet petAtual = pets.get(pets.size()-1);
+            petAtual.print();
+
             while(petAtual.estaVivo()){ //cada iteracao é um turno, e se encerra quando o pet morre
                 /*NOVO TURNO*/
-                clearConsole();
-                petAtual.print();
-
                 SetaAtributos.newTurnStats(petAtual);
                 //INICIO ACAO DO JOGADOR 
                 System.out.println("""
@@ -67,9 +66,8 @@ public class Main {
                 //FIM ACOES DO JOGADOR
                 /*FIM DO TURNO*/
                 SetaAtributos.endTurn(petAtual);
-                scanner.nextLine();
+                System.out.println();
             }
-            clearConsole();
             petAtual.print();
             System.out.println("\né o fim de "+ petAtual.getNome() + ". RIP ;-;\n");
             System.out.println("GAME OVER");
@@ -88,15 +86,9 @@ public class Main {
             if(Objects.isNull(petAtual))
                 System.out.println("pet nao encontrado");
             else {
-                clearConsole();
                 player.revisaPet(petAtual);
             }
         }
         scanner.close();
-    }
-    
-    public final static void clearConsole(){
-        System.out.print("\033[H\033[2J");  
-        System.out.flush();  
     }
 }
