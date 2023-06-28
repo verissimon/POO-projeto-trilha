@@ -32,4 +32,7 @@ public final class Constantes {
     public static final double BRINCAR_BONUSPROB = .35;
     public static final double PROB_DOENTEMORTE = .20;
     public static final int IDADE_IDOSO = 15;      //Se idade >= 15, o pet está velho
+    public static final String ANSI_RESET = "\u001B[0m";
+    public static final String ANSI_RED = "\u001B[31m";
+
 }

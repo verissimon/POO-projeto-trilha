@@ -4,11 +4,9 @@ import pets.Pet;
 import static pets.Const.Constantes.*;
 import static pets.Turno.Testes.*;
 
-//import pets.Cachorro;
-
 public class SetaAtributos {
         /*
-        //teste
+        //main para teste
         public static void main(String[] args) {
             Pet morreuDoente = new Cachorro("morreu Doente");
             morreuDoente.setDoente(true);
@@ -54,7 +52,7 @@ public class SetaAtributos {
                 System.out.println("o pet esta satisfeito com a barriga relativamente cheia");
             }
             if (!pet.estaVivo() && !pet.jaMorreu()) {
-                System.out.println(pet.getNome() + " morreu de fome.");
+                System.out.println(ANSI_RED+ pet.getNome() + " morreu de fome." + ANSI_RESET);
                 pet.setMorreu(true);
             }
         }
@@ -79,7 +77,7 @@ public class SetaAtributos {
                     pet.tomaDano(2*DANO);
                 }
                 if (!pet.estaVivo()) {
-                    System.out.println(pet.getNome() + " morreu de tristeza.");
+                    System.out.println(ANSI_RED+ pet.getNome() + " morreu de tristeza."+ ANSI_RESET);
                     pet.setMorreu(true);    //morreu = true;
                 }
             }
@@ -101,7 +99,7 @@ public class SetaAtributos {
     private static void atualizaDoenca(Pet pet) {
         //Se doente, o pet tem 10% de chance de morrer ao fim do turno.
         if (pet.isDoente() && pet.estaVivo() && testarChance(PROB_DOENTEMORTE)) {
-            System.out.println(pet.getNome() + " faleceu devido a sua doença :(");
+            System.out.println(ANSI_RED+ pet.getNome() + " faleceu devido a sua doença :("+ANSI_RESET);
             pet.setVida(VIDA_MORTO);
             pet.setMorreu(true);    //morreu = true;
         }
@@ -112,11 +110,10 @@ public class SetaAtributos {
         //O pet envelhece e sua idade aumenta 1 ponto.
         if ((pet.getIdade() > IDADE_IDOSO) && testarChance(PROB_MORTEVELHICE) && pet.estaVivo()) {
             //é idoso e passou no teste de morte por velhice
-            System.out.println(pet.getNome() + " faleceu devido a sua idade avançada :(");
+            System.out.println(ANSI_RED+pet.getNome() + " faleceu devido a sua idade avançada :("+ANSI_RESET);
             pet.setVida(VIDA_MORTO);
             pet.setMorreu(true);    //morreu = true;
         }
     }
-
 }
 

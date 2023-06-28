@@ -9,7 +9,7 @@ Vários conceitos de OO podem ser implementados nesse projeto. Cada espécie pod
 
 Um pet tem como parâmetros de saúde sua fome, felicidade, limpeza e pontos de vida. Estes são valores que variam de 0 a 100. Sendo fome um atributo negativo, portanto fome = 100 significa que o pet esta faminto.
 A execução do programa se divide em turnos. A cada turno os parâmetros de saúde do pet diminuem (o valor em fome começa em 0 e aumenta), e cabe ao usuário agir para que estes não caiam a um nível baixo. O pet inicia com 100 pontos de vida, e os perde caso seus parâmetros de bem estar caiam, ou se ocorrer o evento aleatório adoecimento. O pet pode morrer de velhice caso o atributo idade seja alto o suficiente: maior que 15 turnos.  
-O usuário tem uma ação a cada turno: alimentar, brincar, limpar ou medicar o pet. 
+O usuário tem uma ação a cada turno: alimentar, brincar, limpar ou medicar o pet.  
 Alimentar: diminui a fome do pet em 30 pontos  
 Brincar: aumenta a felicidade.  
 Limpar: aumenta a limpeza.  

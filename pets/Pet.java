@@ -2,8 +2,9 @@ package pets;
 
 import static pets.Const.Constantes.*;
 import static pets.Turno.Testes.testarChance;
+import pets.Interfaces.*;
 
-public abstract class Pet implements Acoes{
+public abstract class Pet implements Acoes, Impressoes{
     private final String nome;
     private int vida;
     private int idade;

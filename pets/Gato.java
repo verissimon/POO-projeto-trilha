@@ -21,23 +21,22 @@ public class Gato extends Pet{
 
 
     public void print(){
+        if(this.estaVivo()){
         System.out.println();
         System.out.println("      |\\__/,|   (`\\\n"+
                            "      |o o  |__ _)\n"+
                            "    _.( T   )  `  /\n"+
                            "   ((_ `^--' /_<  \\\n"+
                            "   `` `-'(((/  (((/");
-        
-    }
-
-    public void printDead(){
+        }
+        else{
         System.out.println();
         System.out.println("      |\\__/,|   (`\\\n"+
                            "      |x x  |__ _)\n"+
                            "    _.( T   )  `  /\n"+
                            "   ((_ `^--' /_<  \\\n"+
                            "   `` `-'(((/  (((/");
-        
+        }
     }
 
     @Override

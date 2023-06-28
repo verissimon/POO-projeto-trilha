@@ -20,21 +20,18 @@ public class Cachorro extends Pet{
     }
 
     public void print(){
+        if(this.estaVivo())
         System.out.println("             __\n"+
                            "    \\ ______/ Vo-,\n"+
                            "     }        /~~\n"+
                            "    /_)^ --,r'\n"+
                            "   |b      |b");
-        
-    }
-
-    public void printDead(){
+        else
         System.out.println("             __\n"+
                            "    \\ ______/ Vx-,\n"+
                            "     }        /~~\n"+
                            "    /_)^ --,r'\n"+
                            "   |b      |b");
-        
     }
 
     @Override
