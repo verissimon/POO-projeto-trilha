@@ -29,7 +29,7 @@ public abstract class Pet implements Acoes, Impressoes{
     public void setDoente(boolean doente) {
         this.doente = doente;
     }
-    public boolean jaMorreu() { return morreu; }
+    public boolean isVivo() { return !morreu; }
     public void setMorreu(boolean morreu) {
         this.morreu = morreu;
     }
@@ -62,10 +62,7 @@ public abstract class Pet implements Acoes, Impressoes{
     public void setLimpeza(int limpeza) {
         this.limpeza = limpeza;
     }
-
-    public boolean estaVivo(){  
-        return this.vida > 0;
-    }
+    //public boolean estaVivo(){ return this.vida > 0; }
     public void tomaDano(int dano){
         this.vida += dano;
     }

@@ -1,7 +1,6 @@
 package pets;
 
 import java.util.List;
-import java.util.Objects;
 
 public class Jogador {
     private List<Pet> pets; // agregando o tipo Pet
@@ -34,7 +33,7 @@ public class Jogador {
     public Pet buscaPet(String nome){
         Pet pet = null;
         for (Pet p : this.pets) {
-            if (Objects.equals(p.getNome(), nome)) {
+            if(p.getNome().equalsIgnoreCase(nome)) {
                 pet = p;
                 break;
             }
@@ -45,7 +44,7 @@ public class Jogador {
     public void revisaPet(Pet pet){
         pet.print();
         System.out.println("o pet "+pet.getNome()+" viveu "+pet.getIdade()+" turnos");
-        System.out.println("como tutor, voce pontuou "+this.calcPontuacao(pet)+"pontos");
+        System.out.println("como tutor, voce pontuou "+this.calcPontuacao(pet)+" pontos");
         System.out.println("no fim, os status eram os seguintes:\n");
         pet.printStats();
     }

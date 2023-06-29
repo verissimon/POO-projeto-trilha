@@ -14,11 +14,18 @@ public class Main {
         boolean jogarNovamente = true;
         
         while(jogarNovamente){
-
+            boolean nomeUnico = false;
             //inicio do jogo: definicao de especie e nome do pet
             //scan do nome
-            System.out.println("insira o nome do pet:");
-            String nomeDoPet = scanner.nextLine();
+            String nomeDoPet;
+            do {
+                System.out.println("insira o nome do pet:");
+                nomeDoPet = scanner.nextLine();
+                if(Objects.isNull(player.buscaPet(nomeDoPet))) {
+                    nomeUnico = true;
+                }
+                else System.out.println("esse nome ja foi inserido, use outro");
+            } while(!nomeUnico);
 
             System.out.println("Escolha a especie do seu pet: (0 para sair, 1 Cachorro, 2 Gato, 3 Pinguim)");
             //scan da especie
@@ -45,7 +52,7 @@ public class Main {
             Pet petAtual = pets.get(pets.size()-1);
             petAtual.print();
 
-            while(petAtual.estaVivo()){ //cada iteracao é um turno, e se encerra quando o pet morre
+            while(petAtual.isVivo()){ //cada iteracao é um turno, e se encerra quando o pet morre
                 /*NOVO TURNO*/
                 SetaAtributos.newTurnStats(petAtual);
                 //INICIO ACAO DO JOGADOR 
@@ -76,19 +83,21 @@ public class Main {
 
             if(!scanner.nextLine().contentEquals("1")) jogarNovamente = false;
         }
-
-        System.out.println("deseja rever infos de algum pet?\n1. sim\noutro: nao");
-        if(scanner.nextLine().contentEquals("1")){
-            
-            System.out.println("Digite o nome exato do pet:");
-            String nomePet = scanner.nextLine();
-            Pet petAtual = player.buscaPet(nomePet);
-            if(Objects.isNull(petAtual))
-                System.out.println("pet nao encontrado");
-            else {
-                player.revisaPet(petAtual);
+        boolean sair = false;
+        do {
+            System.out.println("\ndeseja rever infos de algum pet?\n1. sim\noutro: nao");
+            if (scanner.nextLine().contentEquals("1")) {
+                System.out.println("Digite o nome do pet:");
+                String nomePet = scanner.nextLine();
+                Pet petAtual = player.buscaPet(nomePet);
+                if (Objects.isNull(petAtual))
+                    System.out.println("pet nao encontrado");
+                else {
+                    player.revisaPet(petAtual);
+                }
             }
-        }
+            else sair = true;
+        } while(!sair);
         scanner.close();
     }
 }

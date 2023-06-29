@@ -21,7 +21,7 @@ public class Gato extends Pet{
 
 
     public void print(){
-        if(this.estaVivo()){
+        if(this.isVivo()){
         System.out.println();
         System.out.println("      |\\__/,|   (`\\\n"+
                            "      |o o  |__ _)\n"+

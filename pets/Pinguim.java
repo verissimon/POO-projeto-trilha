@@ -22,7 +22,7 @@ public class Pinguim extends Pet {
 
 
     public void print(){
-        if(this.estaVivo())
+        if(this.isVivo())
             System.out.println("    __\n" +
                            "   ( o`-\n"+
                            "   /  \\\n"+

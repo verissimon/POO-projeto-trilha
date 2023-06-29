@@ -20,7 +20,7 @@ public class Cachorro extends Pet{
     }
 
     public void print(){
-        if(this.estaVivo())
+        if(this.isVivo())
         System.out.println("             __\n"+
                            "    \\ ______/ Vo-,\n"+
                            "     }        /~~\n"+

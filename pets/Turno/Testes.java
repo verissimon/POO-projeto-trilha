@@ -24,6 +24,4 @@ public class Testes {
     public static boolean testeLimpeza(Pet pet) { //true se pet estiver sujo (limpeza <= 45)
         return pet.getLimpeza() <= LIMP_SUJO;
     }
-
-
 }
