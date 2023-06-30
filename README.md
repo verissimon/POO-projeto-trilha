@@ -54,4 +54,4 @@ durante a execução a partir de uma busca por nome.
 
 ### Diagrama UML
 
-![](./umlPOO.png)
+![image](./umlPOO-LS.png)
