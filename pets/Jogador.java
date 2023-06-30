@@ -16,7 +16,7 @@ public class Jogador {
         this.pets = pets;
     }
 
-    private int calcPontuacao(Pet pet){ //retorna pontuacao para um pet
+    public int calcPontuacao(Pet pet){ //retorna pontuacao para um pet
         return pet.getIdade()*100
                 + pet.getLimpeza()*10
                 + pet.getFelicidade()*10

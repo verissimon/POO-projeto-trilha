@@ -51,3 +51,7 @@ pontuação = idade*100 + limpeza*10 + felicidade*10 - fome*10
 
 O jogador pode revisar sua pontuação e status de algum dos pets instanciados
 durante a execução a partir de uma busca por nome.
+
+### Diagrama UML
+
+![](./umlPOO.png)
